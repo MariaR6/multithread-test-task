@@ -18,8 +18,8 @@ public class BankAccount {
 
     @Id
     @Column(name = "id")
-    private Long id;
+    private long id;
 
     @Column(name = "amount")
-    private Long amount;
+    private long amount;
 }
