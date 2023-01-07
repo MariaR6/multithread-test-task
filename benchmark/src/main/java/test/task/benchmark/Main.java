@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 public class Main {
-    private static final int THREAD_COUNT = 10;
+    private static final int THREAD_COUNT = 4;
     private static final int READ_QUOTA = 100;
     private static final int WRITE_QUOTA = 1;
     private static final List<Long> readIdList = LongStream.range(1, 1000).boxed().collect(Collectors.toList());
@@ -39,6 +39,7 @@ public class Main {
             });
             thread.setDaemon(true);
             thread.start();
+            System.out.println("Thread " + i + " started");
             threadList.add(thread);
         }
         try {
